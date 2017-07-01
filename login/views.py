@@ -21,12 +21,11 @@ def register(request,ak):
     context = {'object_list':object_list}
     return render(request,'login/registration.html',context)
 
-def login(request,ak):
+def login(request):
     if request.method == "POST":
         if Registration.objects.filter(username=request.POST['username'],password=request.POST['password']).exists():
             return render(request, 'login/success.html', {})
         else :
             return render(request, 'login/new.html', {})
     model = Registration
-    object_list = Registration.objects.get(id=ak)
     return render(request, 'login/login.html', {})
