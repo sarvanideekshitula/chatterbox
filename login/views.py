@@ -4,7 +4,7 @@ from django.shortcuts import render
 from login.models import Registration
 
 
-def register(request,ak):
+def register(request):
     if request.method == "POST":
         Firstname = request.POST.get('firstname')
         Lastname = request.POST.get('lastname')
@@ -13,13 +13,10 @@ def register(request,ak):
         Dateofbirth = request.POST.get('date')
         u = Registration.objects.create(firstname=Firstname,lastname=Lastname,username=Username,password=Password,dateofbirth=Dateofbirth)
         u.save()
-        return render(request,'login/success.html',{})
+        content = {'myvar': Registration.objects.latest('id')}
+        return render(request,'login/success.html',content)
     model = Registration
-    object_list = Registration.objects.get(id=ak)
-    print(object_list)
-
-    context = {'object_list':object_list}
-    return render(request,'login/registration.html',context)
+    return render(request,'login/registration.html',{})
 
 def login(request):
     if request.method == "POST":

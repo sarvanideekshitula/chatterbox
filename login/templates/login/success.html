@@ -1,2 +1,105 @@
-Login Successfull!!
-{{ Post.stuname }}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FBlogin</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="/home/sarvani/Desktop/Fblogin/bower_components/angular-md5/angular-md5.js"></script>
+	<style>
+		#bar{
+			background-color: #3B5998;
+			height: 80px;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+		}
+		h1{
+			width: 100%;
+			height: 50px;
+			position: absolute;
+            right: -200px;
+            font-size: 44px;
+            color: white;
+            font-family: "Liberation Sans";
+            bottom: -10px;
+            font-weight: bold;
+		}
+    .loginbtn {
+             font-family: "Nimbus Sans L";
+             width: 20%;
+             top: 500px;
+             height: 25px;
+             right: 800px;
+             left: 800px;
+             position: absolute;
+             font-size: 15px;
+             background-color: #00b200;
+             color: white;
+             border: none;
+             bottom: 25px;
+             font-weight: bold;
+		}
+		#login {
+			background-color: #dfe3ee;
+			top: 80px;
+			bottom: 80px;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			overflow-wrap: initial;
+			height: auto;
+			float: right;
+			clear: both;
+			padding: 50px 0;
+		}
+		.loginmodal-container {
+			background-color: #ffffff;
+			top: 50px;
+			bottom: 20px;
+			position: absolute;
+			width: 400px;
+			margin: 50px auto;
+			left: 200px;
+			text-align: center;
+			font-family: "Arial";
+			font-size: 20px;
+
+		}
+		.loginmodal-container input[type=submit] {
+            width: 50%;
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+            left: 150px;
+        }
+        .loginmodal-container {
+            height: 200px;
+  			width: 80%;
+  			margin-bottom: 10px;
+ 			-webkit-appearance: none;
+  			background: #fff;
+  			border: 1px solid #d9d9d9;
+  			border-top: 1px solid #c0c0c0;
+  			padding: 0 8px;
+  			box-sizing: border-box;
+           -moz-box-sizing: border-box;
+        }
+	</style>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<div id="bar" align="left">
+	<h1>chaTTerbox</h1>
+</div>
+<div id="login">
+	<div class ="loginmodal-container">
+    <h2>Login Successfull!!</h2><br>
+    {{ myvar.firstname }} {{ myvar.lastname }}<br>
+    <h3>Your Account will be setup soon!!</h3><br>
+    <p>Now you are a part of chaTTerbox...</p>
+      <p>Enjoy our hospitality :p </p>
+      <input ng-click="login()" type="submit" name="Chat" class="loginbtn" value="Chat">
+	</div>
+</div>
+
+</body>
+</html>

@@ -20,6 +20,6 @@ from login.views import register, login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^Register/(?P<ak>[0-9]+)/', register, name='Register'),
+    url(r'^Register/', register, name='Register'),
     url(r'^login/', login, name='Login')
 ]
